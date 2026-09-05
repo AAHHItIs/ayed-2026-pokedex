@@ -4,11 +4,11 @@ Repositorio del grupo. Partir de este esqueleto. No borrar la estructura de `src
 
 ## Integrantes
 
-| Nombre        | Mail                  | GitHub |
-|---------------|-----------------------|--------|
-| Dylan Galetto | Galedylan42@gmail.com | @AAHHItIs      |
-|               |                       |        |
-|               |                       |        |
+| Nombre        | Mail                  | GitHub    |
+|---------------|-----------------------|-----------|
+| Dylan Galetto | Galedylan42@gmail.com | @AAHHItIs |
+| Pendiente     | Pendiente             | Pendiente |
+|               |                       |           |
 
 **Tema elegido:** Pokédex / Recetario / Biblioteca musical (dejar uno)
 
