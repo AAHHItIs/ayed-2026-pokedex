@@ -1,4 +1,6 @@
 class ListaEnlazada:
+    def __init__(self):
+        raise NotImplementedError
     """TAD lista enlazada simple. No usar list de Python por debajo."""
 
     def __init__(self):
