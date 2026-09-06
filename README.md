@@ -7,7 +7,7 @@ Repositorio del grupo. Partir de este esqueleto. No borrar la estructura de `src
 | Nombre        | Mail                  | GitHub    |
 |---------------|-----------------------|-----------|
 | Dylan Galetto | Galedylan42@gmail.com | @AAHHItIs |
-| Pendiente     | Pendiente             | Pendiente |
+| FedericoIRodriguez     | federicorodriguez1998mail.com             | @FedericoIRodriguez         |
 |               |                       |           |
 
 **Tema elegido:** Pokédex
