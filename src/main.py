@@ -1,7 +1,6 @@
-import csv
 from src.config import TEMA
-from src.tads.lista_enlazada import ListaEnlazada
-from src.dominio.pokemon import Pokemon
+from src.dominio.pokemon import cargar_pokedex
+from src.dominio.evoluciones import cargar_evoluciones, cadena_evolutiva
 
 TEMAS = {
     "pokedex": "Pokédex",
@@ -12,27 +11,6 @@ TEMAS = {
 
 def pendiente():
     print("Todavía no está implementado. Completar en la entrega que corresponde.")
-
-
-def cargar_pokedex(ruta_csv):
-    pokedex = ListaEnlazada()
-    with open(ruta_csv, encoding="utf-8") as archivo:
-        lector = csv.DictReader(archivo)
-        for fila in lector:
-            tipo2 = fila["tipo2"] if fila["tipo2"] not in ("", "null", "<null>") else None
-            pokemon = Pokemon(
-                int(fila["id"]),
-                fila["nombre"],
-                fila["tipo1"],
-                tipo2,
-                int(fila["hp"]),
-                int(fila["ataque"]),
-                int(fila["defensa"]),
-                int(fila["velocidad"]),
-                int(fila["generacion"])
-            )
-            pokedex.insertar_al_final(pokemon)
-    return pokedex
 
 
 def mostrar_menu():
@@ -57,6 +35,7 @@ def main():
         return
 
     pokedex = cargar_pokedex("data/pokedex.csv")
+    mapa_evoluciones = cargar_evoluciones("data/evoluciones.csv")
 
     opcion = None
     while opcion != "0":
@@ -67,7 +46,14 @@ def main():
         elif opcion == "1":
             for pokemon in pokedex:
                 print(pokemon)
-        elif opcion in {"2", "3", "4", "5", "6", "7", "8", "9"}:
+        elif opcion == "5":
+            id_texto = input("ID del Pokémon: ").strip()
+            if id_texto.isdigit():
+                cadena = cadena_evolutiva(int(id_texto), mapa_evoluciones)
+                print(" -> ".join(str(i) for i in cadena))
+            else:
+                print("Ingresá un número válido.")
+        elif opcion in {"2", "3", "4", "6", "7", "8", "9"}:
             pendiente()
         else:
             print("Opción inválida.")
