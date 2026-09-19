@@ -36,10 +36,30 @@ ListaEnlazada (TAD)
 
 ## 3. Recursión (E2)
 
-- Función:
-- Caso base:
-- Caso recursivo:
+- Función: `cadena_evolutiva(id_pokemon, mapa_evoluciones)`
+- Caso base: el Pokémon actual no aparece como clave en `mapa_evoluciones` (no tiene ninguna evolución registrada en `evoluciones.csv`). En ese caso, la función devuelve una lista con solo ese Pokémon.
+- Caso recursivo:  el Pokémon actual sí aparece en `mapa_evoluciones` (tiene una evolución). En ese caso, la función busca a qué Pokémon evoluciona y se llama a sí misma con ese nuevo ID, agregando el Pokémon actual al principio de la lista que devuelve la llamada siguiente.
 - Traza de un ejemplo real del dataset:
+
+```text
+cadena_evolutiva(63, mapa)
+  63 está en el mapa (63 -> 64), no es caso base
+  llama a cadena_evolutiva(64, mapa)
+
+    cadena_evolutiva(64, mapa)
+      64 está en el mapa (64 -> 65), no es caso base
+      llama a cadena_evolutiva(65, mapa)
+
+        cadena_evolutiva(65, mapa)
+          65 NO está en el mapa → CASO BASE
+          devuelve [65]
+
+      devuelve [64] + [65] = [64, 65]
+
+  devuelve [63] + [64, 65] = [63, 64, 65]
+
+Resultado final: [63, 64, 65]  (Abra -> Kadabra -> Alakazam)
+```
 
 ## 4. TADs (E3)
 
