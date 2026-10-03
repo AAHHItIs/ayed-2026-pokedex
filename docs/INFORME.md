@@ -65,11 +65,11 @@ Resultado final: [63, 64, 65]  (Abra -> Kadabra -> Alakazam)
 
 | TAD | Operaciones | Invariante |
 | --- | --- | --- |
-| ListaEnlazada |  |  |
-| Pila |  |  |
-| Cola |  |  |
+| ListaEnlazada | insertar_al_inicio, insertar_al_final, buscar, eliminar, tamanio, esta_vacia, __iter__ | El último nodo de la cadena siempre tiene siguiente = None. tamanio() siempre coincide con la cantidad real de nodos alcanzables desde _cabeza. |
+| Pila | apilar, desapilar, ver_tope, esta_vacia | El elemento devuelto por ver_tope() es siempre el último que se apiló y no se desapiló todavía (LIFO). |
+| Cola | encolar, desencolar, ver_frente, esta_vacia | El elemento devuelto por ver_frente() es siempre el primero que se encoló y no se desencoló todavía (FIFO). |
 
-Dónde se usa cada uno en el dominio.
+ListaEnlazada es la base de Pila, Cola y Equipo. Pila se usa como historial de Pokémon visitados (permite deshacer). Cola se usa para los turnos de Pokémon en espera.
 
 ## 5. Complejidad (E4)
 
